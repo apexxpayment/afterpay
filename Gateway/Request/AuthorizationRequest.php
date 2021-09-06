@@ -105,7 +105,7 @@ class AuthorizationRequest implements BuilderInterface
             //"account" => 'eb82e77014d64f3a9b80342df2db62a0',
             //"organisation" => $this->apexxBaseHelper->getOrganizationId(),
             "currency" => $order->getCurrencyCode(),
-            "merchant_reference" => 'JOURNEYBOX'.$order->getOrderIncrementId(),
+            "merchant_reference" => $this->apexxBaseHelper->getStoreCode().$order->getOrderIncrementId(),
             "capture_now" => false,
             "customer_ip" => $order->getRemoteIp(),
             "dynamic_descriptor" => $this->afterpayHelper->getDynamicDescriptor(),
